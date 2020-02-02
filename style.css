@@ -1,0 +1,119 @@
+* {
+  font-family: sans-serif;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #071e3d;
+}
+.container {
+  /* color: #fff; */
+  position: relative;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 0 40px;
+}
+.container .box {
+  position: relative;
+  height: 400px;
+  background: #071e3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+}
+.container .box:before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: -2px;
+  bottom: -2px;
+  background: #fff;
+  transform: skew(2deg, 2deg);
+  z-index: -1;
+}
+.container .box:nth-child(1):before {
+  background: linear-gradient(
+    315deg,
+    rgb(18, 194, 233),
+    rgb(196, 113, 237),
+    rgb(246, 79, 89)
+  );
+}
+.container .box:nth-child(2):before {
+  background: linear-gradient(315deg, rgb(241, 39, 17), rgb(245, 175, 25));
+}
+.container .box:nth-child(3):before {
+  background: linear-gradient(315deg, rgb(168, 255, 120), rgb(120, 255, 214));
+}
+.container .box:nth-child(4):before {
+  background: linear-gradient(315deg, rgb(127, 0, 255), rgb(225, 0, 255));
+}
+.container .box:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+.box .content {
+  padding: 20px;
+}
+.box .content h1 {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  margin: 0;
+  padding: 0;
+  font-size: 10em;
+  color: rgba(255, 255, 255, 0.05);
+  transition: 0.5s;
+}
+.box:hover .content h1 {
+  top: -90px;
+}
+.box .content h2 {
+  margin: 0;
+  padding: 0 0 10px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+}
+.box .content p {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 100;
+}
+.box .content a {
+  margin: 20px 0 0;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  display: inline-block;
+  transition: 0.5s;
+  transform: translateY(-40px);
+  opacity: 0;
+  visibility: hidden;
+}
+.box:hover .content a {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+.box .content a:hover {
+  background-color: #fff;
+  color: #071e3d;
+}
